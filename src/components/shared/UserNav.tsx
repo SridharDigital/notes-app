@@ -15,12 +15,7 @@ import { CreditCard, DoorClosed, Home, Settings } from "lucide-react";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 import Link from "next/link";
-
-export const navItems = [
-  { name: "Home", href: "/dashboard", icon: Home },
-  { name: "Settings", href: "/dashboard/settings", icon: Settings },
-  { name: "Billing", href: "/dashboard/billing", icon: CreditCard },
-];
+import { navItems } from "@/constants";
 
 export function UserNav({
   name,
