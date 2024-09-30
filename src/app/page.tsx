@@ -3,12 +3,13 @@ import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 
-export default async function Home() {
+const Home = async () => {
   const { isAuthenticated } = getKindeServerSession();
 
   if (await isAuthenticated()) {
     return redirect("/dashboard");
   }
+
   return (
     <section className="flex h-[90vh] items-center justify-center bg-background">
       <div className="relative mx-auto w-full max-w-7xl items-center px-5 py-12 md:px-12 lg:px-16">
@@ -40,4 +41,6 @@ export default async function Home() {
       </div>
     </section>
   );
-}
+};
+
+export default Home;

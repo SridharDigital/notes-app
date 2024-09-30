@@ -17,7 +17,7 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Link from "next/link";
 import { navItems } from "@/constants";
 
-export function UserNav({
+const UserNav = ({
   name,
   email,
   image,
@@ -25,7 +25,7 @@ export function UserNav({
   name: string;
   email: string;
   image: string;
-}) {
+}) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -77,4 +77,6 @@ export function UserNav({
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export default UserNav;

@@ -5,8 +5,8 @@ import {
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { UserNav } from "./UserNav";
-import { ThemeToggle } from "./ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
+import UserNav from "./UserNav";
 
 const Navbar = async () => {
   const { isAuthenticated, getUser } = getKindeServerSession();
