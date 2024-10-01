@@ -3,15 +3,15 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
-import ThemeProvider from "@/components/theme-provider";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import prisma from "@/lib/db";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Notes App",
-  description: "Save your notes",
+  title: "Cenvic Notes App",
+  description: "Save your notes with ease",
 };
 
 async function getData(userId: string) {
@@ -39,7 +39,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${data?.colorScheme ?? "theme-orange"}`}
+        className={`${inter.className} ${data?.colorScheme ?? "theme-green"}`}
       >
         <Navbar />
         <ThemeProvider
