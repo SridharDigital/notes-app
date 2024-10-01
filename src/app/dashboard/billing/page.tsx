@@ -12,7 +12,10 @@ import { redirect } from "next/navigation";
 
 import { unstable_noStore as noStore } from "next/cache";
 import prisma from "@/lib/db";
-import { StripeSubscriptionCreationButton } from "@/components/shared/SubmitButtons";
+import {
+  StripePortal,
+  StripeSubscriptionCreationButton,
+} from "@/components/shared/SubmitButtons";
 
 const featureItems = [
   { name: "Lorem Ipsum something" },
@@ -41,7 +44,7 @@ async function getData(userId: string) {
   return data;
 }
 
-export default async function BillingPage() {
+const Billing = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   const data = await getData(user?.id as string);
@@ -65,7 +68,7 @@ export default async function BillingPage() {
     const subscriptionUrl = await getStripeSession({
       customerId: dbUser.stripeCustomerId,
       domainUrl:
-        process.env.NODE_ENV == "production"
+        process.env.NODE_ENV === "production"
           ? (process.env.PRODUCTION_URL as string)
           : "http://localhost:3000",
       priceId: process.env.STRIPE_PRICE_ID as string,
@@ -154,4 +157,6 @@ export default async function BillingPage() {
       </Card>
     </div>
   );
-}
+};
+
+export default Billing;
