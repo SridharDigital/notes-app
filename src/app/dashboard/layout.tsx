@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import DashboardNav from "@/components/dashboard/DashboardNav";
 import prisma from "@/lib/db";
+import { stripe } from "@/lib/stripe";
 
 interface getDataProps {
   email: string;
@@ -37,6 +38,21 @@ const getData = async ({
         email,
         id,
         name,
+      },
+    });
+  }
+
+  if (!user?.stripeCustomerId) {
+    const data = await stripe.customers.create({
+      email,
+    });
+
+    await prisma.user.update({
+      where: {
+        id,
+      },
+      data: {
+        stripeCustomerId: data.id,
       },
     });
   }
