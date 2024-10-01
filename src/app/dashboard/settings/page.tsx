@@ -1,4 +1,4 @@
-import { SubmitButton } from "@/components/SubmitButtons";
+import { SubmitButton } from "@/components/shared/SubmitButtons";
 import {
   Card,
   CardContent,
