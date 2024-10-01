@@ -70,7 +70,7 @@ const Billing = async () => {
       domainUrl:
         process.env.NODE_ENV === "production"
           ? (process.env.PRODUCTION_URL as string)
-          : "http://localhost:3000",
+          : "https://cenvicnotes.vercel.app",
       priceId: process.env.STRIPE_PRICE_ID as string,
     });
 
@@ -84,7 +84,7 @@ const Billing = async () => {
       return_url:
         process.env.NODE_ENV === "production"
           ? (process.env.PRODUCTION_URL as string)
-          : "http://localhost:3000/dashboard",
+          : "https://cenvicnotes.vercel.app/dashboard",
     });
 
     return redirect(session.url);
