@@ -21,12 +21,12 @@ const Home = async () => {
               </span>
             </span>
 
-            <h1 className="mt-8 text-3xl font-extrabold tracking-tight lg:text-6xl">
-              Create Notes with ease
+            <h1 className="mt-8 text-3xl font-extrabold tracking-tight lg:text-5xl">
+              Effortless Note Management
             </h1>
             <p className="mx-auto mt-8 max-w-xl text-base text-secondary-foreground lg:text-xl">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et d
+              Quickly create, organize, and access your notes with ease, helping
+              you stay productive and focused.
             </p>
           </div>
 
