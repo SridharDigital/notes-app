@@ -41,13 +41,13 @@ export default async function RootLayout({
       <body
         className={`${inter.className} ${data?.colorScheme ?? "theme-green"}`}
       >
-        <Navbar />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
